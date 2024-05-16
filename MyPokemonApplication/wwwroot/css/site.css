@@ -3,6 +3,23 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    /* Set the background color */
+    background-color: #fdeb71;
+    /* Set a background image */
+    background-image: url('path-to-your-pokemon-background-image');
+    /* Set the font */
+    font-family: Arial, sans-serif;
+    /* Remove default margin and padding */
+    margin: 0;
+    padding: 0;
+}
+.pokemon-name {
+    /* Set the font to Pokemon Solid */
+    font-family: 'Pokemon Solid';
+    /* Make the text bold */
+    font-weight: bold;
+}
+
 }
 
 .container {
