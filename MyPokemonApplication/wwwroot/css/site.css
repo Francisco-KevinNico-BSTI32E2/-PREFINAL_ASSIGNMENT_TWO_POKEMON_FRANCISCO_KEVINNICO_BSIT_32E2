@@ -1,26 +1,29 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    
-    background-color: #fdeb71;
-   
-    background-image: url('path-to-your-pokemon-background-image');
-  
-    font-family: Arial, sans-serif;
-    
-    margin: 0;
-    padding: 0;
-}
-.pokemon-name {
-    
+@font-face {
     font-family: 'Pokemon Solid';
-   
-    font-weight: bold;
+    src: url('/fonts/PokemonSolidNormal-xyWR.ttf') format('truetype');
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdeb71;
+    background-image: url('path-to-your-pokemon-background-image');
+    margin: 0;
+    padding: 0;
 }
+
+.pokemon-name {
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 15px; /* Increase the font size */
+    color: #007fbf; /* Adjust color if needed */
+    text-decoration: none;
+    display: block; /* Ensures the link occupies full width */
+    margin: 5px 0; /* Adds some space between the names */
+    letter-spacing: 0px; /* Adjust letter spacing */
+}
+
+    .pokemon-name:hover {
+        text-decoration: underline; /* Add underline on hover for better UX */
+    }
 
 .container {
     width: 80%;
