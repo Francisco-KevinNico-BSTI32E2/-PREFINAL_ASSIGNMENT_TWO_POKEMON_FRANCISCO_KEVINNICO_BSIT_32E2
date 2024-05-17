@@ -13,16 +13,15 @@ body {
 
 .pokemon-name {
     font-family: 'Pokemon Solid', sans-serif;
-    font-size: 15px; /* Increase the font size */
-    color: #007fbf; /* Adjust color if needed */
+    font-size: 15px; 
+    color: #007fbf; 
     text-decoration: none;
-    display: block; /* Ensures the link occupies full width */
-    margin: 5px 0; /* Adds some space between the names */
-    letter-spacing: 0px; /* Adjust letter spacing */
-}
+    display: block; 
+    margin: 5px 0; 
+    letter-spacing: 0px; 
 
     .pokemon-name:hover {
-        text-decoration: underline; /* Add underline on hover for better UX */
+        text-decoration: underline; 
     }
 
 .container {
@@ -91,3 +90,14 @@ header {
     #showcase p {
         font-size: 20px;
     }
+    <head>
+    <meta charset="utf-8" />
+    <title>Details</title>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <style>
+        .custom-font {
+            font-family: 'Arial', sans-serif; /* Replace 'Arial' with your desired font */
+            /* Add any other font properties here */
+        }
+    </style>
+</head>

@@ -1,24 +1,19 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<MyPokemonApplication.Models.Pokemon>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>MyPokemonApplication</title>
     <link rel="stylesheet" type="text/css" href="~/css/site.css" />
-    <style>
-        .center {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <div class="header">
-        <!-- Adding the Pokémon logo -->
         <img src="~/images/pokemon-logo.png" alt="Pokémon Logo" style="height: 50px;" />
         <div class="navbar">
         </div>
     </div>
-    <div class="content center">
-        <!-- Added center class here -->
+    <div class="content">
         <h2>Pokemon List</h2>
 
         <table>
