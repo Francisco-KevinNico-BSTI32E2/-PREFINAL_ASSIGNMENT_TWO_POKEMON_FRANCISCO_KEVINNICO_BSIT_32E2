@@ -1,4 +1,6 @@
-﻿<head>
+﻿@model MyPokemonApplication.Models.Pokemon
+
+<head>
     <meta charset="utf-8" />
     <title>Details</title>
     <link rel="stylesheet" type="text/css" href="~/css/site.css" />
@@ -6,42 +8,61 @@
         .custom-font {
             font-family: fantasy, fantasy; 
         }
+
+        .ability-list, .move-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .ability-list li, .move-list li {
+            width: 10%; /* Display 10 items per row */
+            padding: 5px;
+            text-align: center;
+            margin-bottom: 10px; /* Adjust spacing between rows */
+        }
     </style>
 </head>
 
+<body>
+    <img src="~/images/pokemon/@Model.ImageFileName" alt="@Model.Name" />
+    <h2 class="custom-font">@Model.Name</h2>
 
-@model MyPokemonApplication.Models.Pokemon
-
-<h2 class="custom-font">@Model.Name</h2>
-
-<h3 class="custom-font">Moves</h3>
-<ul>
-    @foreach (var move in Model.Moves)
-    {
-        <li class="custom-font">@move</li>
-    }
-</ul>
-
-<h3 class="custom-font">Abilities</h3>
-<ul>
-    @foreach (var ability in Model.Abilities)
-    {
-        <li class="custom-font">@ability</li>
-    }
-</ul>
-
-@{
-    var prevDisabled = ViewBag.Page == 1 ? "disabled" : "";
-    var nextDisabled = ViewBag.Page == ViewBag.TotalPages ? "disabled" : "";
-}
-
-<nav aria-label="Page navigation">
-    <ul class="pagination">
-        <li class="page-item @prevDisabled">
-            <a class="page-link" href="@Url.Action("Index", "Pokemon", new { page = ViewBag.Page - 1 })">Previous</a>
-        </li>
-        <li class="page-item @nextDisabled">
-            <a class="page-link" href="@Url.Action("Index", "Pokemon", new { page = ViewBag.Page + 1 })">Next</a>
-        </li>
+    <h3 class="custom-font">Moves</h3>
+    <ul class="move-list">
+        @{
+            foreach (var move in Model.Moves.Take(10)) 
+            {
+                <li class="custom-font">@move</li>
+            }
+        }
     </ul>
-</nav>
+
+    <h3 class="custom-font">Abilities</h3>
+    <ul class="ability-list">
+        @{
+            foreach (var ability in Model.Abilities.Take(10))
+            {
+                <li class="custom-font">@ability</li>
+            }
+        }
+    </ul>
+
+
+    @{
+        var prevDisabled = ViewBag.Page == 1 ? "disabled" : "";
+        var nextDisabled = ViewBag.Page == ViewBag.TotalPages ? "disabled" : "";
+    }
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item @prevDisabled">
+                <a class="page-link" href="@Url.Action("Index", "Pokemon", new { page = ViewBag.Page - 1 })">Previous</a>
+            </li>
+            <li class="page-item @nextDisabled">
+                <a class="page-link" href="@Url.Action("Index", "Pokemon", new { page = ViewBag.Page + 1 })">Next</a>
+            </li>
+        </ul>
+    </nav>
+</body>
